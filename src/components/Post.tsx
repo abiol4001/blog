@@ -17,8 +17,8 @@ const Post = (props: Props) => {
             </p>
               <h1 className='text-xl font-semibold'>Lorem ipsum dolor sit amet consectetur
               </h1>
-              <p className='text-sm md:text-base'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, possimus fugit ad quia pariatur cum. Suscipit reprehenderit deserunt aut eos dolor dolorum ut, odio nulla expedita esse?</p>
-              <Link href={""} className='w-fit border-b-[1.5px] border-b-black'>Read more</Link>
+              <p className='text-sm md:text-base font-light'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius, possimus fugit ad quia pariatur cum. Suscipit reprehenderit deserunt aut eos dolor dolorum ut, odio nulla expedita esse?</p>
+              <Link href={""} className='w-fit border-b-[1.5px] border-b-black dark:border-b-white'>Read more</Link>
           </div>
       </div>
   )

@@ -9,37 +9,37 @@ const CategoryList = (props: Props) => {
   const categories = [
     {
       title: "fashion",
-      color: "bg-blue-900/30",
+      color: "bg-blue-900/30 dark:bg-blue-300",
       link: "fashion",
       img: "/fashion.jpg"
     },
     {
       title: "travel",
-      color: "bg-emerald-600/10",
+      color: "bg-emerald-600/20 dark:bg-emerald-600/40",
       link: "travel",
       img: "/travel.jpg"
     },
     {
       title: "styles",
-      color: "bg-purple-600/10",
+      color: "bg-purple-600/20 dark:bg-purple-600/40",
       link: "styles",
       img: "/style.jpg"
     },
     {
       title: "culture",
-      color: "bg-pink-800/10",
+      color: "bg-pink-800/20 dark:bg-pink-800/40",
       link: "culture",
       img: "/world.jpg"
     },
     {
       title: "food",
-      color: "bg-orange-600/10",
+      color: "bg-orange-600/20 dark:bg-orange-600/70",
       link: "food",
       img: "/food.jpg"
     },
     {
       title: "technology",
-      color: "bg-gray-800/20",
+      color: "bg-gray-800/20 dark:bg-gray-800",
       link: "technology",
       img: "/tech.jpg"
     },

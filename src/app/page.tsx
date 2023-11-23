@@ -10,7 +10,7 @@ export default function Home() {
     <div>
       <Featured />
       <CategoryList />
-      <div className='flex w-full'>
+      <div className='flex flex-col lg:flex-row gap-14 w-full px-4 md:px-10 lg:px-20'>
         <CardList />
         <Menu />
       </div>
