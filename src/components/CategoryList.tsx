@@ -11,37 +11,37 @@ const CategoryList = (props: Props) => {
       title: "fashion",
       color: "bg-blue-900/30 dark:bg-blue-300",
       link: "fashion",
-      img: "/fashion.jpg"
+      img: "/images/fashion.jpg"
     },
     {
       title: "travel",
       color: "bg-emerald-600/20 dark:bg-emerald-600/40",
       link: "travel",
-      img: "/travel.jpg"
+      img: "/images/travel.jpg"
     },
     {
       title: "styles",
       color: "bg-purple-600/20 dark:bg-purple-600/40",
       link: "styles",
-      img: "/style.jpg"
+      img: "/images/style.jpg"
     },
     {
       title: "culture",
       color: "bg-pink-800/20 dark:bg-pink-800/40",
       link: "culture",
-      img: "/world.jpg"
+      img: "/images/world.jpg"
     },
     {
       title: "food",
       color: "bg-orange-600/20 dark:bg-orange-600/70",
       link: "food",
-      img: "/food.jpg"
+      img: "/images/food.jpg"
     },
     {
       title: "technology",
       color: "bg-gray-800/20 dark:bg-gray-800",
       link: "technology",
-      img: "/tech.jpg"
+      img: "/images/tech.jpg"
     },
   ]
   return (

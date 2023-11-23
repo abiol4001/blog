@@ -6,9 +6,9 @@ type Props = {}
 
 const CardList = (props: Props) => {
   return (
-    <div className='lg:w-[75%] flex-shrink-0'>
+      <div className='w-full lg:w-[75%] flex-shrink-0'>
           <h1 className='text-lg md:text-xl font-bold'>Recent Posts</h1>
-          <div>
+          <div className='space-y-20 lg:space-y-10 w-full'>
               {[...Array(3)].map((_, index) => (
                 <Post key={index} />
               ))}
