@@ -21,7 +21,7 @@ const Navbar = (props: Props) => {
             <div className='flex-1 text-left md:text-center'>
                 <Link href="/" className={cn('text-2xl md:text-3xl lg:text-4xl', montserrat.className)}>My Blog</Link>
             </div>
-            <div className='flex justify-end font-semibold items-center gap-5 flex-1'>
+            <div className='flex justify-end font-semibold items-center gap-5 w-full flex-1'>
                 <ThemeToggle />
                 <div className='hidden lg:flex items-center gap-2.5 '>
                     <Link href="/">Homepage</Link>

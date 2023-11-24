@@ -22,19 +22,21 @@ const MobileSidebar = (props: Props) => {
     }
 
     return (
-        <Sheet>
-            <SheetTrigger>
-                <Button variant="ghost" size="icon" className='lg:hidden'>
-                    <Menu />
-                </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className='p-0 flex flex-col gap-10 justify-center items-center'>
+        <div className='lg:hidden'>
+            <Sheet>
+                <SheetTrigger>
+                    <Button variant="ghost" size="icon" >
+                        <Menu />
+                    </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className='p-0 flex flex-col gap-10 justify-center items-center'>
                     <Link href="/">Homepage</Link>
                     <Link href="/contact">Contact</Link>
                     <Link href="/about">About</Link>
                     <AuthLinks />
-            </SheetContent>
-        </Sheet>
+                </SheetContent>
+            </Sheet>
+        </div>
     )
 }
 

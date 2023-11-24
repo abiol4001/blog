@@ -18,7 +18,7 @@ const Menu = (props: Props) => {
                             </div>
                             <div className='flex flex-col gap-y-1 w-[80%]'>
                                 <span className='text-xs px-2 py-1 rounded-2xl bg-orange-400 w-fit text-white'>Travel</span>
-                                <p className='text-'>
+                                <p className='text-sm md:text-base'>
                                     Lorem ipsum dolor sit amet elit. Deserunt, animi.
                                 </p>
                                 <div className='text-xs text-muted-foreground'>
@@ -42,7 +42,7 @@ const Menu = (props: Props) => {
                         </div>
                         <div className='flex flex-col gap-y-1 w-[80%]'>
                             <span className='text-xs px-2 py-1 rounded-2xl bg-orange-400 w-fit text-white'>Travel</span>
-                            <p className='text-'>
+                            <p className='text-sm md:text-base'>
                                 Lorem ipsum dolor sit amet elit. Deserunt, animi.
                             </p>
                             <div className='text-xs text-muted-foreground'>
