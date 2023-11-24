@@ -1,11 +1,13 @@
+"use client"
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'
+import { signOut, useSession } from 'next-auth/react'
 
 type Props = {}
 
 const AuthLinks = (props: Props) => {
-    const status = "unauthenticated"
+    const {status} = useSession()
     return (
         <div className=''>
             {status === "unauthenticated" ?
@@ -16,7 +18,7 @@ const AuthLinks = (props: Props) => {
                     <Link href="/write">
                         Write
                     </Link>
-                    <Button className=''>Logout</Button>
+                    <Button onClick={()=> signOut()} className=''>Logout</Button>
                 </div>
             }
         </div>

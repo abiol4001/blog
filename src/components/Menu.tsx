@@ -14,7 +14,7 @@ const Menu = (props: Props) => {
                     {[...Array(3)].map((_, index) => (
                         <Link key={index} href={""} className='flex items-center gap-4 w-full'>
                             <div className='relative aspect-square w-[23%] flex-shrink-0'>
-                                <Image src="/world.jpg" alt='' fill className='object-cover rounded-full border-[3px] border-gray-300' />
+                                <Image src="/images/world.jpg" alt='' fill className='object-cover rounded-full border-[3px] border-gray-300' />
                             </div>
                             <div className='flex flex-col gap-y-1 w-[80%]'>
                                 <span className='text-xs px-2 py-1 rounded-2xl bg-orange-400 w-fit text-white'>Travel</span>
@@ -38,7 +38,7 @@ const Menu = (props: Props) => {
                 {[...Array(3)].map((_, index) => (
                     <Link key={index} href={""} className='flex items-center gap-4 w-full'>
                         <div className='relative aspect-square w-[23%] flex-shrink-0'>
-                            <Image src="/world.jpg" alt='' fill className='object-cover rounded-full border-[3px] border-gray-300' />
+                            <Image src="/images/world.jpg" alt='' fill className='object-cover rounded-full border-[3px] border-gray-300' />
                         </div>
                         <div className='flex flex-col gap-y-1 w-[80%]'>
                             <span className='text-xs px-2 py-1 rounded-2xl bg-orange-400 w-fit text-white'>Travel</span>

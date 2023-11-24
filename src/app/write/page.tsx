@@ -7,6 +7,8 @@ import {
 } from "@/components/ui/popover"
 
 import { ExternalLink, Image, PlusCircle, Video } from 'lucide-react'
+import { useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.bubble.css';
@@ -15,6 +17,15 @@ type Props = {}
 
 const WritePage = (props: Props) => {
     const [value, setValue] = useState('');
+
+    const router = useRouter()
+    const { status } = useSession()
+
+    console.log("Status" + status)
+
+    if (status === "unauthenticated") {
+        return router.push("/")
+    }
   return (
       <div className='min-h-[calc(100vh-100px)] px-4 md:px-10 lg:px-20 relative'>
           <input type="text" placeholder='Title' className='outline-none border-none text-3xl md:text-[64px] bg-transparent p-10 w-full placeholder:text-[#b3b3b1]' />
@@ -30,14 +41,14 @@ const WritePage = (props: Props) => {
                           <ExternalLink />
                       </Button>
                       <Button size="icon">
-                          <Image />
+                          {/* <Image /> */}
                       </Button>
                       <Button size="icon">
                           <Video />
                       </Button>
                   </PopoverContent>
               </Popover>
-              <ReactQuill theme="bubble" value={value} onChange={setValue} placeholder='Tell your story...' />
+              <ReactQuill theme="bubble" value={value} onChange={setValue} placeholder='Tell your story...' className='text-lg' />
               <Button className='absolute top-[30px] right-0 bg-green-500'>Publish</Button>
         </div>
     </div>
