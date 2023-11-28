@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { cn } from '@/lib/utils'
 import Providers from '@/lib/Providers'
+import { Toaster } from '@/components/ui/toaster'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           <div className='max-w-[1536px] mx-auto'>
             <Navbar />
             {children}
+            <Toaster />
             <Footer />
           </div>
         </Providers>

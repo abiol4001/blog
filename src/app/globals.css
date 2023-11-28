@@ -80,6 +80,10 @@
   font-size: 24px;
 }
 
+.ql-editor {
+  font-size: 18px;
+}
+
 .fashion {
   @apply bg-blue-900/30 dark:bg-blue-300/50;
 }
