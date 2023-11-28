@@ -8,7 +8,8 @@ type Props = {
         createdAt: string
         img: string
         desc: string
-        cat: string
+        catSlug: string
+        slug: string
     }
 }
 
@@ -24,13 +25,13 @@ const Post = ({ post }: Props) => {
                 />
             </div>
             <div className='flex-1 flex flex-col gap-y-4'>
-                <p className='space-x-4'>
-                    <span className='text-muted-foreground text-sm'>{post.createdAt}</span>
-                    <span className='text-red-500 font-medium'>{post.cat}</span>
+                <p className=''>
+                    <span className='text-muted-foreground text-sm'>{post.createdAt.substring(0, 10)} - </span>
+                    <span className='text-red-500 font-medium capitalize'>{post.catSlug}</span>
                 </p>
                 <h1 className='text-xl font-semibold'>{post.title}</h1>
                 <p className='text-sm md:text-base font-light'>{post.desc}</p>
-                <Link href={""} className='w-fit border-b-[1.5px] border-b-black dark:border-b-white'>Read more</Link>
+                <Link href={`/posts/${post.slug}`} className='w-fit border-b-[1.5px] border-b-black dark:border-b-red-500'>Read more</Link>
             </div>
         </div>
     )

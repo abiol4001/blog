@@ -78,7 +78,7 @@ const CategoryList = async (props: Props) => {
         {data?.map((item: Categories) => (
           <Link 
           key={item.title} 
-          href={`/blog${item.link}`} 
+          href={`/blog?category=${item.title}`} 
           className={cn("rounded-sm relative h-[70px] w-[48%] sm:w-[28%] md:w-[30%] lg:w-[15%] px-2 flex items-center gap-2 justify-center", item.title)}>
             <Image src={item.img} alt='category-image' width={32} height={32} style={{ width: '32px', height: '32px' }} className='rounded-full' />
             <p className='text-sm capitalize '>{item.title}</p>

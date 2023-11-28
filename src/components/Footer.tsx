@@ -10,7 +10,7 @@ const Footer = (props: Props) => {
     <div className='px-4 md:px-10 lg:px-20 flex flex-col md:flex-row pb-3'>
       <div className='flex-1 flex flex-col space-y-3'>
         <div className='relative flex gap-2 items-center'>
-          <Image src="/food.jpg" alt="" width={40} height={40} className='object-cover rounded-full'
+          <Image src="/images/food.jpg" alt="" width={40} height={40} className='object-cover rounded-full'
           style={{width: "40px", height: "40px"}} />
           <p className='font-bold text-lg'>myBlog</p>
         </div>
