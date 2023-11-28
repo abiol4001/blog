@@ -9,14 +9,17 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 
 import { ExternalLink, Image, PlusCircle, Video } from 'lucide-react'
 import { useSession } from 'next-auth/react'
+import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
-import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.bubble.css';
 
 type Props = {}
 
 const WritePage = (props: Props) => {
+
+    const ReactQuill = dynamic(() => import('react-quill'), {ssr: false})
+
     const [value, setValue] = useState('');
     const [title, setTitle] = useState('')
     const [media, setMedia] = useState('')
