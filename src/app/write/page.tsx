@@ -15,10 +15,10 @@ import React, { useState } from 'react'
 import 'react-quill/dist/quill.bubble.css';
 
 type Props = {}
+const ReactQuill = dynamic(() => import('react-quill'), {ssr: false})
 
 const WritePage = (props: Props) => {
-
-    const ReactQuill = dynamic(() => import('react-quill'), {ssr: false})
+    
 
     const [value, setValue] = useState('');
     const [title, setTitle] = useState('')
