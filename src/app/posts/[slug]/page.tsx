@@ -11,7 +11,7 @@ type Props = {
 }
 
 const getPost = async (slug: string) => {
-    const response = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+    const response = await fetch(`${process.env.NEXTAUTH_URL}/api/posts/${slug}`, {
         cache: "no-cache"
     })
 
@@ -46,9 +46,9 @@ const SinglePostPage = async ({params}: Props) => {
                 </div>
             </div>
             <div className='flex gap-10 flex-col lg:flex-row w-full'>
-                <div className='space-y-10'>
+                <div className='space-y-10 w-full'>
                     <div className='space-y-3' dangerouslySetInnerHTML={{__html: data?.desc}}/>
-                    <Comments />
+                    <Comments postSlug={slug} />
                 </div>
                 <Menu />
             </div>

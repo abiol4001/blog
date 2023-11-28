@@ -17,11 +17,14 @@ type Props = {}
 
 const WritePage = (props: Props) => {
     const [value, setValue] = useState('');
+    const [title, setTitle] = useState('')
+    const [media, setMedia] = useState('')
+    const [image, setImage] = useState(null)
 
     const router = useRouter()
     const { status } = useSession()
 
-    console.log("Status" + status)
+    // console.log("Status" + status)
 
     if (status === "unauthenticated") {
         return router.push("/")
@@ -41,7 +44,10 @@ const WritePage = (props: Props) => {
                           <ExternalLink />
                       </Button>
                       <Button size="icon">
-                          {/* <Image /> */}
+                        <input type="file" name="file" id="image" className='hidden' onChange={(e)=> setImage(e.target.files[0])}/>
+                         <label htmlFor="image">
+                              <Image />
+                         </label>
                       </Button>
                       <Button size="icon">
                           <Video />
