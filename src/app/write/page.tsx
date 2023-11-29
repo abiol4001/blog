@@ -11,7 +11,7 @@ import { ExternalLink, Image, PlusCircle, Video } from 'lucide-react'
 import { useSession } from 'next-auth/react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import 'react-quill/dist/quill.bubble.css';
 
 type Props = {}
@@ -27,6 +27,16 @@ const WritePage = (props: Props) => {
 
     const router = useRouter()
     const { status } = useSession()
+
+    const [isMounted, setIsMounted] = useState(false)
+
+    useEffect(() => {
+        setIsMounted(true)
+    }, [])
+
+    if (!isMounted) {
+        return null
+    }
 
     // console.log("Status" + status)
 
