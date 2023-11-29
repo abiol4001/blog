@@ -47,7 +47,7 @@ const SinglePostPage = async ({params}: Props) => {
             </div>
             <div className='flex gap-10 flex-col lg:flex-row w-full'>
                 <div className='space-y-10 w-full'>
-                    <div className='space-y-3' dangerouslySetInnerHTML={{__html: data?.desc}}/>
+                    <div className='space-y-3 lg:w-[90%]' dangerouslySetInnerHTML={{__html: data?.desc}}/>
                     <Comments postSlug={slug} />
                 </div>
                 <Menu />

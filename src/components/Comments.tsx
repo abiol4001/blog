@@ -57,6 +57,7 @@ const Comments = ({ postSlug }: Props) => {
                 <textarea 
                 className='p-4 bg-zinc-200 rounded-sm w-full lg:w-[90%] outline-none text-black' 
                 onChange={(e)=> setDesc(e.target.value)}
+                value={desc}
                 cols={10} 
                 rows={5} 
                 placeholder='Write a comment...'

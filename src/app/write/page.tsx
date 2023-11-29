@@ -15,21 +15,21 @@ import React, { useEffect, useState } from 'react'
 import 'react-quill/dist/quill.bubble.css';
 
 type Props = {}
-const ReactQuill = dynamic(() => import('react-quill'), {ssr: false})
 
+const ReactQuill = dynamic(() => import('react-quill'), {ssr: false})
 const WritePage = (props: Props) => {
     
-
+    
     const [value, setValue] = useState('');
     const [title, setTitle] = useState('')
     const [media, setMedia] = useState('')
     const [image, setImage] = useState<File | null>(null)
-
+    
     const router = useRouter()
     const { status } = useSession()
-
+    
     const [isMounted, setIsMounted] = useState(false)
-
+    
     useEffect(() => {
         setIsMounted(true)
     }, [])
@@ -37,6 +37,8 @@ const WritePage = (props: Props) => {
     if (!isMounted) {
         return null
     }
+
+    
 
     // console.log("Status" + status)
 
