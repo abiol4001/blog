@@ -17,7 +17,7 @@ const Pagination = ({page, hasNext, hasPrev}: Props) => {
     return (
         <div className='my-14 flex justify-between lg:w-[90%]'>
             <Button 
-            className='disabled:bg-slate-500 disabled:cursor-not-allowed'
+            className='disabled:bg-slate-500 disabled:cursor-not-allowed lg:w-[150px]'
             disabled={!hasPrev}
             onClick={()=> router.push(`?page=${page - 1}`)}
             >
@@ -25,7 +25,7 @@ const Pagination = ({page, hasNext, hasPrev}: Props) => {
                 Previous page
                 </Button>
             <Button 
-            className='disabled:bg-slate-500 disabled:cursor-not-allowed'
+                className='disabled:bg-slate-500 disabled:cursor-not-allowed lg:w-[150px]'
             disabled={!hasNext}
             onClick={()=> router.push(`?page=${page + 1}`)}
             >

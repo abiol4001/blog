@@ -26,8 +26,8 @@ export async function GET(req: NextRequest) {
     take: POST_PER_PAGE,
     skip: POST_PER_PAGE * (pageNumber - 1),
     where: {
-      ...(category && {catSlug: category})
-    }
+      ...(category && { catSlug: category }),
+    },
   };
 
   // console.log(page)

@@ -1,12 +1,11 @@
 import { cn } from '@/lib/utils'
-import { Facebook, X } from 'lucide-react'
 import { Montserrat } from 'next/font/google'
 import React from 'react'
 import Link from 'next/link'
 import AuthLinks from './AuthLinks'
 import { ThemeToggle } from './ThemeToggle'
 import MobileSidebar from './MobileSidebar'
-import Image from 'next/image'
+import SocialIcons from './SocialIcons'
 
 type Props = {}
 
@@ -14,16 +13,10 @@ const montserrat = Montserrat({ weight: "600", subsets: ["latin"] })
 
 const Navbar = (props: Props) => {
     return (
-        <div className='flex items-center justify-between w-full px-4 md:px-10 lg:px-20 h-[100px] border border-b-zinc-100'>
-            <div className='hidden md:flex gap-1 flex-1'>
-                <a href='#' className='rounded-full bg-blue-700 flex justify-center items-center p-1'><Facebook size={24} strokeWidth={0} className='fill-white text-white' /></a>
-                <a href='#'
-                    className='rounded-full bg-black flex flex-shrink-0 justify-center items-center p-1 w-8 h-8 relative'>
-                    <Image src="/images/x-logo.avif" alt='x-logo' fill className='rounded-full p-1' />
-                </a>
-            </div>
+        <div className='flex items-center justify-between w-full px-4 md:px-10 lg:px-20 h-[100px] border-b border-b-zinc-100'>
+            <SocialIcons />
             <div className='flex-1 text-left md:text-center'>
-                <Link href="/" className={cn('text-2xl md:text-3xl lg:text-4xl', montserrat.className)}>My Blog</Link>
+                <Link href="/" className={cn('text-2xl md:text-3xl lg:text-4xl', montserrat.className)}>Penster</Link>
             </div>
             <div className='flex justify-end font-semibold items-center gap-5 w-full flex-1'>
                 <ThemeToggle />
