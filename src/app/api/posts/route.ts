@@ -56,7 +56,7 @@ export async function POST(req: NextRequest) {
   try {    
     const body = await req.json()
     const post = await prisma.post.create({
-     data: {...body, title: body.desc, userEmail: session?.user?.email}
+     data: {...body, userEmail: session?.user?.email}
     })
 
     return NextResponse.json(post, { status: 200 });

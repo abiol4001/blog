@@ -16,20 +16,21 @@ import 'react-quill/dist/quill.bubble.css';
 
 type Props = {}
 
-const ReactQuill = dynamic(() => import('react-quill'), {ssr: false})
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 const WritePage = (props: Props) => {
-    
-    
+
+
     const [value, setValue] = useState('');
     const [title, setTitle] = useState('')
     const [media, setMedia] = useState('')
     const [image, setImage] = useState<File | null>(null)
-    
+    const [category, setCategory] = useState<string | null>(null)
+
     const router = useRouter()
     const { status } = useSession()
-    
+
     const [isMounted, setIsMounted] = useState(false)
-    
+
     useEffect(() => {
         setIsMounted(true)
     }, [])
@@ -38,13 +39,36 @@ const WritePage = (props: Props) => {
         return null
     }
 
-    
-
-    // console.log("Status" + status)
-
     if (status === "unauthenticated") {
         return router.push("/")
     }
+
+    const slugify = (str: string) => {
+        str.toLowerCase().trim().replace(/[^\w\s-]/g, "").replace(/[\s_-]+/g, "-").replace(/^-+|-+$/g, "")
+    }
+
+    const handleSubmit = async () => {
+        const response = await fetch(`/api/posts`, {
+            method: "POST",
+            body: JSON.stringify({
+                title,
+                desc: value,
+                slug: slugify(title),
+                img: media,
+                catSlug: category
+            })
+
+        })
+        if (!response.ok) {
+            throw new Error("Unable to submit post")
+        }
+        setTitle("")
+        setValue("")
+    }
+
+
+    // console.log("Status" + status)
+
 
     const formats = [
         'header',
@@ -83,7 +107,7 @@ const WritePage = (props: Props) => {
                             <Button size="icon">
                                 <input type="file" name="file" id="image" className='hidden' onChange={(e) => {
                                     if (e.target.files) {
-                                    setImage(e.target.files[0]);
+                                        setImage(e.target.files[0]);
                                     }
                                 }} />
                                 <label htmlFor="image">
@@ -96,7 +120,7 @@ const WritePage = (props: Props) => {
                         </PopoverContent>
                     </Popover>
 
-                    <Select onValueChange={() => { }}>
+                    <Select onValueChange={(value) => setCategory(value)}>
                         <SelectTrigger className="w-[150px]">
                             <SelectValue placeholder="Select Category" />
                         </SelectTrigger>
@@ -124,7 +148,7 @@ const WritePage = (props: Props) => {
                 />
                 {/* </ReactQuill> */}
 
-                <Button className='absolute top-[30px] right-0 bg-green-500'>Publish</Button>
+                <Button onClick={handleSubmit} className='absolute top-[30px] right-0 bg-green-500'>Publish</Button>
             </div>
         </div>
     )

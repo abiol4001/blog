@@ -15,7 +15,7 @@ const Pagination = ({page, hasNext, hasPrev}: Props) => {
     const router = useRouter()
 
     return (
-        <div className='my-14 flex justify-between lg:pr-14'>
+        <div className='my-14 flex justify-between lg:w-[90%]'>
             <Button 
             className='disabled:bg-slate-500 disabled:cursor-not-allowed'
             disabled={!hasPrev}

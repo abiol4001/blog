@@ -2,6 +2,8 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import Toast from './Toast';
+import { toast } from './ui/use-toast';
 
 type Categories = {
   title: string
@@ -20,10 +22,16 @@ const getCategories = async () => {
   })
 
   if(!response.ok) {
-    throw new Error("Unable to get categories");
-    
+    // <Toast />
+    console.log(response.json())
+    return 
   }
-
+  if(response.status !== 200) {
+    // toast({title: "EYE"})
+    console.log(response.json())
+    return 
+  }
+  
   return response.json()
 }
 
