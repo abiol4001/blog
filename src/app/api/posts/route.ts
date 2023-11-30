@@ -22,7 +22,10 @@ export async function GET(req: NextRequest) {
 
   const POST_PER_PAGE = 2
 
-  const query = {
+  const query: any = {
+    // orderBy: {
+    //   createdAt: ""
+    // },
     take: POST_PER_PAGE,
     skip: POST_PER_PAGE * (pageNumber - 1),
     where: {

@@ -43,8 +43,8 @@ const Menu = async () => {
                                 <Image src={post.img || "/images/world.jpg"} alt='' fill className='object-cover rounded-full border-[3px] border-gray-300' />
                             </div>
                             <div className='flex flex-col gap-y-1 w-[80%]'>
-                            <span className={cn('text-xs px-2 py-1 rounded-2xl capitalize w-fit ', post.catSlug)}>{ post?.catSlug}</span>
-                                <p className='text-sm md:text-base'>
+                            <span className={cn('text-xs px-3 py-1 rounded-2xl capitalize w-fit ', post.catSlug)}>{ post?.catSlug}</span>
+                                <p className='text-sm md:text-base font-bold'>
                                 {post?.title}
                                 </p>
                                 <div className='text-xs text-muted-foreground'>

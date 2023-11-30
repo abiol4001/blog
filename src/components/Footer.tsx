@@ -8,10 +8,8 @@ type Props = {}
 
 const Footer = (props: Props) => {
   return (
-    <div className='pt-10 border border-t-zinc-100'>
+    <div className='pt-10 border-t border-t-zinc-100'>
       <div className='px-4 md:px-10 lg:px-20 flex flex-col md:flex-row'>
-
-      
       <div className='flex-1 flex flex-col space-y-3'>
         <div className='relative flex gap-2 items-center'>
           <Image src="/images/food.jpg" alt="" width={40} height={40} className='object-cover rounded-full'

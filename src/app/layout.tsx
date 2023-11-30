@@ -5,7 +5,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { cn } from '@/lib/utils'
 import Providers from '@/lib/Providers'
-import { Toaster } from '@/components/ui/toaster'
+import { Toaster } from 'react-hot-toast'
+
 
 const inter = Inter({ subsets: ['latin'] })
 

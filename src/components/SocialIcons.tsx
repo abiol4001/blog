@@ -5,7 +5,7 @@ type Props = {}
 
 const SocialIcons = (props: Props) => {
     return (
-        <div className='hidden md:flex gap-3 transition flex-1'>
+        <div className='flex gap-3 transition'>
             <a href='#' className='rounded-md  flex justify-center items-center p-1.5 group border border-x-slate-400 transition hover:border-[#4267B2]'>
                 <Facebook size={24} strokeWidth={0} className='fill-slate-400 group-hover:animate-bounce group-hover:fill-[#4267B2]' />
             </a>
