@@ -18,7 +18,7 @@ const Post = ({ post }: Props) => {
 
     return (
         <div className='flex flex-col lg:flex-row items-center gap-x-[50px] gap-y-5 lg:mt-12 w-full lg:pr-14'>
-            <div className='relative lg:flex-1 h-[200px] lg:h-[350px] w-full'>
+            <div className='relative lg:flex-1 h-[200px] lg:h-[350px] w-full overflow-hidden'>
                 <Image
                     src={post.img || "/images/food.jpg"} alt=''
                     className='object-cover'

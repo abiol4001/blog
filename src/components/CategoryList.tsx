@@ -17,18 +17,18 @@ type Props = {
 }
 
 const getCategories = async () => {
-  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`, {
+  const response = await fetch(`${process.env.NEXTAUTH_URL}/api/categorie`, {
     cache: "no-cache"
   })
 
   if(!response.ok) {
-    // <Toast />
-    console.log(response.json())
-    return 
+    <Toast message='Unable to get Categories' />
+    // console.log(response.json())
+    // return 
   }
   if(response.status !== 200) {
-    // toast({title: "EYE"})
-    console.log(response.json())
+    <Toast message='Unable to get Categories' />
+    // console.log(response.json())
     return 
   }
   
@@ -85,9 +85,9 @@ const CategoryList = async (props: Props) => {
       <div className='flex flex-wrap items-center justify-between my-[50px] gap-y-4'>
         {data?.map((item: Categories) => (
           <Link 
-          key={item.title} 
+          key={item._id} 
           href={`/blog?category=${item.title}`} 
-          className={cn("rounded-sm relative h-[70px] w-[48%] sm:w-[28%] md:w-[30%] lg:w-[15%] px-2 flex items-center gap-2 justify-center", item.title)}>
+            className={cn("rounded-sm relative h-[70px] w-[48%] sm:w-[28%] md:w-[30%] lg:w-[15%] px-2 flex items-center gap-2 justify-center hover:opacity-80", item.title)}>
             <Image src={item.img} alt='category-image' width={32} height={32} style={{ width: '32px', height: '32px' }} className='rounded-full' />
             <p className='text-sm capitalize '>{item.title}</p>
           </Link>

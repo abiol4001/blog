@@ -99,12 +99,14 @@ const WritePage = (props: Props) => {
 
         })
         if (!response.ok) {
+            toast.error("Something went wrong!, unable to publish post")
             throw new Error("Unable to submit post")
         }
         setTitle("")
         setValue("")
         setMedia("")
         setImage(null)
+        toast.success("Your post has been published successfully")
     }
 
 

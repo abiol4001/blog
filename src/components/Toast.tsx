@@ -1,7 +1,6 @@
 "use client"
 
-import { toast } from "./ui/use-toast";
-
+import toast from "react-hot-toast";
 
 type Props = {
     message: string
@@ -9,7 +8,7 @@ type Props = {
 
 // const notify = () => toast('Here is your toast.');
 
-const Toast = () => {
-    return toast({description: "Test"})
+const Toast = ({message}: Props) => {
+    return toast(message)
 };
 export default Toast

@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React from 'react'
 
 type PostsProps = {
@@ -38,7 +39,7 @@ const Menu = async () => {
                 {/* What is hot */}
             <div className='mb-14 mt-5 space-y-8'>
                 {posts?.splice(0,4).map((post: PostsProps) => (
-                        <Link key={post._id} href={`posts/${post.slug}`} className='flex items-center gap-4 w-full'>
+                    <Link key={post._id} href={`/posts/${post.slug}` } className='flex items-center gap-4 w-full'>
                             <div className='relative aspect-square w-[23%] flex-shrink-0'>
                                 <Image src={post.img || "/images/world.jpg"} alt='' fill className='object-cover rounded-full border-[3px] border-gray-300' />
                             </div>
